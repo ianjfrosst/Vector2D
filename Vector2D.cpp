@@ -4,7 +4,7 @@ Vector2D::Vector2D(double nX, double nY) {
     SetXY(nX, nY);
 }
 
-void Vector2D::SetXY(double nX = 0, double nY = 0) {
+void Vector2D::SetXY(double nX = 0.0, double nY = 0.0) {
     x = nX;
     y = nY;
 }
@@ -20,6 +20,14 @@ double Vector2D::GetDir() {
 
 double Vector2D::GetMag() {
     return hypot(x, y);
+}
+
+double Vector2D::X() const {
+    return x;
+}
+
+double Vector2D::Y() const {
+    return y;
 }
 
 Vector2D& Vector2D::operator+=(const Vector2D& v) {
@@ -95,3 +103,14 @@ Vector2D& Vector2D::Rotate(double angle) {
     return (*this);
 }
 
+std::ostream& operator<<(std::ostream& os, const Vector2D& v) {
+    os << "(" << v.x << ", " << v.y << ")";
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Vector2D& v) {
+    double tX, tY;
+    is >> tX >> tY;
+    v.SetXY(tX, tY);
+    return is;
+}

@@ -3,8 +3,8 @@
 
 int main() {
     Vector2D v1(4.0, 0.0);
-    std::cout << v1.GetDir() * 180.0/M_PI << std::endl;
-    v1.Rotate(M_PI/2.0);
-    std::cout << v1.GetDir() * 180.0/M_PI;
+    Vector2D v2;
+    std::cin >> v2;
+    std::cout << v2;
     return 0;
 }
