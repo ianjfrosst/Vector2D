@@ -34,4 +34,3 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
     friend std::istream& operator>>(std::istream& os, Vector2D& v);
 };
-
